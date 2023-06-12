@@ -1,0 +1,52 @@
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+    mongo:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+
+api:
+  nombre: CerberoBeta-Store-Wize
+  mensaje-error-default: "Lo sentimos, por el momento no podemos realizar su operaci\u00f3n"
+  codigo-error-default: 1
+  mensajes-error:
+    002: "El servidor no pudo interpretar la solicitud dada una sintaxis invalida."
+    004: "Cuenta de cargo y cuenta de abono no pueden ser iguales."
+    005: "Operaci\u00F3n no valida, favor de verificar los datos"
+    006: "Digito de verificaci\u00f3n erroneo."
+    007: "BLE0209 CUENTA BLOQUEADA POR AREA CENTRAL"
+    015: "No existe operacion para esta operaci\u00f3n."
+    026: "Datos de entrada incorrectos."
+    040: "Datos del cliente erroneos favor de validar."
+    060: "Cuenta cancelada."
+    123: "La Operaci\u00f3n no puede ser procesada en este momento. Para cualquier duda o aclaraci\u00f3n llame a la l\u00cdnea baz s\u00faperapp (55 6377 4447)."
+    236: "Operaci\u00f3n no permitida."
+    401: "Para continuar, actualiza tu clave de 6 n\u00fameros, ingresando a tu perfil."
+
+spring:
+  application:
+    name: ms-storewize
+  main:
+    banner-mode: off
+  profiles:
+    active: local
+
+server:
+  port: 8080
+  servlet:
+    context-path: /cerberobeta/store/products
+
+mongodb:
+  cadena_conexion: mongodb://localhost:27017/storewize
+
+apireststore:
+  timeout: 10000
+  url:
+    productos: https://fakestoreapi.com/products
+    categorias: https://fakestoreapi.com/products/categories
+    usuarios: https://fakestoreapi.com/users
