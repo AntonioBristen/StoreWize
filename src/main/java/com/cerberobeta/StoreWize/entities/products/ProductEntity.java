@@ -1,6 +1,6 @@
 package com.cerberobeta.StoreWize.entities.products;
 
-public class Product {
+public class ProductEntity {
 
     private Integer id;
     private String title;
@@ -10,7 +10,7 @@ public class Product {
     private String image;
     private RatingEntity rating;
 
-    public Product()
+    public ProductEntity()
     {
 
     }

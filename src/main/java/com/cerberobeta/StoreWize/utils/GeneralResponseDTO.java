@@ -1,9 +1,16 @@
 package com.cerberobeta.StoreWize.utils;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.slf4j.MDC;
+import org.springframework.context.annotation.Scope;
 
 import java.util.List;
 
+import static com.cerberobeta.StoreWize.utils.ConstantsUtil.SPANID;
+import static com.cerberobeta.StoreWize.utils.ConstantsUtil.TRACEID;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Scope(value = "prototype")
 public class GeneralResponseDTO {
 
     private String codigo;
@@ -12,6 +19,10 @@ public class GeneralResponseDTO {
     private Object resultado;
     private String info;
     private List<String> detalles;
+
+    public GeneralResponseDTO() {
+
+    }
 
     public GeneralResponseDTO(String codigo, String mensaje, Object resultado, String folio, String info, List<String> detalles)
     {
@@ -22,6 +33,7 @@ public class GeneralResponseDTO {
         this.info = info;
         this.detalles = detalles;
     }
+
     public static Builder builder() {
         return new Builder();
     }
@@ -30,7 +42,7 @@ public class GeneralResponseDTO {
         private String codigo;
         private String mensaje = "Operaci\u00f3n Exitosa.";
         private Object resultado;
-        private String folio = "0123456789";
+        private String folio = MDC.get(TRACEID) + "-" + MDC.get(SPANID);
         private String info;
         private List<String> detalles;
 

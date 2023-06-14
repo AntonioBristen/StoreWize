@@ -1,23 +1,24 @@
 package com.cerberobeta.StoreWize.beans;
 
 import com.cerberobeta.StoreWize.entities.products.ProductEntity;
-import org.springframework.context.annotation.Bean;
+import com.cerberobeta.StoreWize.entities.session.RequestSessionEntity;
+import com.cerberobeta.StoreWize.entities.session.SessionEntity;
 
 import java.util.List;
 
-public class ProductsResponseDTO {
+public class SessionResponseDTO {
 
-    private List<ProductEntity> resultado;
+    private RequestSessionEntity resultado;
 
     private String mensaje;
 
     private String folio;
 
-    public List<ProductEntity> getResultado() {
+    public RequestSessionEntity getResultado() {
         return resultado;
     }
 
-    public void setResultado(List<ProductEntity> resultado) {
+    public void setResultado(RequestSessionEntity resultado) {
         this.resultado = resultado;
     }
 

@@ -47,6 +47,6 @@ mongodb:
 apireststore:
   timeout: 10000
   url:
-    productos: https://fakestoreapi.com/products
-    categorias: https://fakestoreapi.com/products/categories
-    usuarios: https://fakestoreapi.com/users
+    products: https://fakestoreapi.com/products
+    categories: https://fakestoreapi.com/products/categories
+    users: https://fakestoreapi.com/users/

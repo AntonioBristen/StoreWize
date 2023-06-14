@@ -1,25 +1,26 @@
 package com.cerberobeta.StoreWize.services;
 
 import com.cerberobeta.StoreWize.beans.ProductsResponseDTO;
-import com.cerberobeta.StoreWize.entities.products.Product;
+import com.cerberobeta.StoreWize.daos.ProductDAO;
+import com.cerberobeta.StoreWize.exception.RestResponseException;
 import com.cerberobeta.StoreWize.utils.GeneralResponseDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 import static org.springframework.http.HttpStatus.OK;
 
-@Component
+@Service
 public class ProductsService {
 
+    @Autowired
+    ProductDAO productDAO;
     public ResponseEntity<GeneralResponseDTO> obtenerProductos()
+            throws RestResponseException
     {
-        List<Product> productos = new ArrayList<Product>();
         ProductsResponseDTO productsResponseDTO = new ProductsResponseDTO();
-
-            return new ResponseEntity(GeneralResponseDTO.builder().setResultado(productsResponseDTO).build(), OK);
+        productsResponseDTO = productDAO.obtenerProductos();
+            return new ResponseEntity(GeneralResponseDTO.builder().setResultado(productsResponseDTO.getResultado()).build(), OK);
     }
 
 }
