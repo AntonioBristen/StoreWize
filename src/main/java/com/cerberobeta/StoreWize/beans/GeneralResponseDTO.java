@@ -1,4 +1,4 @@
-package com.cerberobeta.StoreWize.utils;
+package com.cerberobeta.StoreWize.beans;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.slf4j.MDC;
@@ -13,25 +13,25 @@ import static com.cerberobeta.StoreWize.utils.ConstantsUtil.TRACEID;
 @Scope(value = "prototype")
 public class GeneralResponseDTO {
 
-    private String codigo;
-    private String mensaje;
+    private String code;
+    private String message;
     private String folio;
-    private Object resultado;
+    private Object result;
     private String info;
-    private List<String> detalles;
+    private List<String> details;
 
     public GeneralResponseDTO() {
 
     }
 
-    public GeneralResponseDTO(String codigo, String mensaje, Object resultado, String folio, String info, List<String> detalles)
+    public GeneralResponseDTO(String code, String mensaje, Object resultado, String folio, String info, List<String> detalles)
     {
-        this.codigo = codigo;
-        this.mensaje = mensaje;
+        this.code = code;
+        this.message = mensaje;
         this.folio = folio;
-        this.resultado = resultado;
+        this.result = resultado;
         this.info = info;
-        this.detalles = detalles;
+        this.details = detalles;
     }
 
     public static Builder builder() {
@@ -81,20 +81,20 @@ public class GeneralResponseDTO {
         }
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getMensaje() {
-        return mensaje;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String getFolio() {
@@ -105,12 +105,12 @@ public class GeneralResponseDTO {
         this.folio = folio;
     }
 
-    public Object getResultado() {
-        return resultado;
+    public Object getResult() {
+        return result;
     }
 
-    public void setResultado(Object resultado) {
-        this.resultado = resultado;
+    public void setResult(Object result) {
+        this.result = result;
     }
 
     public String getInfo() {
@@ -121,12 +121,12 @@ public class GeneralResponseDTO {
         this.info = info;
     }
 
-    public List<String> getDetalles() {
-        return detalles;
+    public List<String> getDetails() {
+        return details;
     }
 
-    public void setDetalles(List<String> detalles) {
-        this.detalles = detalles;
+    public void setDetails(List<String> details) {
+        this.details = details;
     }
 
 }

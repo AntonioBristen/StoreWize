@@ -3,7 +3,7 @@ package com.cerberobeta.StoreWize.controllers;
 
 import com.cerberobeta.StoreWize.services.GenerateSessionService;
 import com.cerberobeta.StoreWize.utils.ConstantsUtil;
-import com.cerberobeta.StoreWize.utils.GeneralResponseDTO;
+import com.cerberobeta.StoreWize.beans.GeneralResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.ResponseEntity;

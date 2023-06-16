@@ -1,6 +1,10 @@
 package com.cerberobeta.StoreWize.entities.session;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Geolocation{
+
+	@JsonProperty("long")
 	private String longi;
 	private String lat;
 

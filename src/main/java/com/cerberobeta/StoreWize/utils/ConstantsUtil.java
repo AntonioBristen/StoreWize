@@ -26,5 +26,7 @@ public final class ConstantsUtil {
     public static final String SPANID = "spanId";
     public static final String HEADER_IUS = "x-ius";
 
+    public static final int COD_EXCEPCION = 1404;
+
     private ConstantsUtil() { }
 }
