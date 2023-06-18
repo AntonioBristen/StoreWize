@@ -4,8 +4,6 @@ management:
       enabled: true
     readinessstate:
       enabled: true
-    mongo:
-      enabled: true
   endpoint:
     health:
       show-details: always
@@ -35,14 +33,18 @@ spring:
     banner-mode: off
   profiles:
     active: local
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url:  jdbc:h2:mem:test
+    username: root
+
 
 server:
   port: 8080
   servlet:
     context-path: /cerberobeta/store/products
-
-mongodb:
-  cadena_conexion: mongodb://localhost:27017/storewize
 
 apireststore:
   timeout: 10000
@@ -50,3 +52,4 @@ apireststore:
     products: https://fakestoreapi.com/products
     categories: https://fakestoreapi.com/products/categories
     users: https://fakestoreapi.com/users/
+    carts: https://fakestoreapi.com/carts

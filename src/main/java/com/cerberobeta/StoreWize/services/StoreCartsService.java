@@ -1,8 +1,10 @@
 package com.cerberobeta.StoreWize.services;
 
-import com.cerberobeta.StoreWize.beans.ProductsResponseDTO;
-import com.cerberobeta.StoreWize.daos.ProductDAO;
+import com.cerberobeta.StoreWize.beans.CartsResponseDTO;
 import com.cerberobeta.StoreWize.beans.GeneralResponseDTO;
+import com.cerberobeta.StoreWize.beans.ProductsResponseDTO;
+import com.cerberobeta.StoreWize.daos.CartsDAO;
+import com.cerberobeta.StoreWize.daos.ProductDAO;
 import com.cerberobeta.StoreWize.utils.ConstantsUtil;
 import com.cerberobeta.StoreWize.utils.ProcesUtil;
 import org.slf4j.MDC;
@@ -13,21 +15,22 @@ import org.springframework.stereotype.Service;
 import static org.springframework.http.HttpStatus.OK;
 
 @Service
-public class ProductsService {
+public class StoreCartsService {
 
     @Autowired
-    ProductDAO productDAO;
+    CartsDAO cartsDAO;
 
     @Autowired
     ConstantsUtil constantsUtil;
-    public ResponseEntity<GeneralResponseDTO> obtenerProductos()
+    public ResponseEntity<GeneralResponseDTO> getCarts()
     {
         this.generateMDC();
 
-        ProductsResponseDTO productsResponseDTO = new ProductsResponseDTO();
-        productsResponseDTO = productDAO.obtenerProductos();
+        CartsResponseDTO cartsResponseDTO = new CartsResponseDTO();
 
-            return new ResponseEntity(GeneralResponseDTO.builder().setResultado(productsResponseDTO.getResultado()).build(), OK);
+        cartsResponseDTO.setResultado(cartsDAO.getCarts());
+
+            return new ResponseEntity(GeneralResponseDTO.builder().setResultado(cartsResponseDTO.getResultado()).build(), OK);
     }
 
     public void generateMDC()
