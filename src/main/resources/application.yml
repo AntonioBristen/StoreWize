@@ -14,17 +14,6 @@ api:
   codigo-error-default: 1
   mensajes-error:
     002: "El servidor no pudo interpretar la solicitud dada una sintaxis invalida."
-    004: "Cuenta de cargo y cuenta de abono no pueden ser iguales."
-    005: "Operaci\u00F3n no valida, favor de verificar los datos"
-    006: "Digito de verificaci\u00f3n erroneo."
-    007: "BLE0209 CUENTA BLOQUEADA POR AREA CENTRAL"
-    015: "No existe operacion para esta operaci\u00f3n."
-    026: "Datos de entrada incorrectos."
-    040: "Datos del cliente erroneos favor de validar."
-    060: "Cuenta cancelada."
-    123: "La Operaci\u00f3n no puede ser procesada en este momento. Para cualquier duda o aclaraci\u00f3n llame a la l\u00cdnea baz s\u00faperapp (55 6377 4447)."
-    236: "Operaci\u00f3n no permitida."
-    401: "Para continuar, actualiza tu clave de 6 n\u00fameros, ingresando a tu perfil."
 
 spring:
   application:
@@ -52,4 +41,3 @@ apireststore:
     products: https://fakestoreapi.com/products
     categories: https://fakestoreapi.com/products/categories
     users: https://fakestoreapi.com/users/
-    carts: https://fakestoreapi.com/carts

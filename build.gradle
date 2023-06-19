@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.12'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "org.sonarqube" version "4.2.0.3129"
 	id 'jacoco'
 }
 
@@ -18,7 +19,6 @@ dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	runtimeOnly 'com.h2database:h2:'
 	implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.3'
 	implementation group: 'jakarta.validation', name: 'jakarta.validation-api', version: '2.0.2'
@@ -31,3 +31,10 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jacocoTestReport{
+	reports{
+		xml.enabled true
+	}
+}
+test.finalizedBy jacocoTestReport
