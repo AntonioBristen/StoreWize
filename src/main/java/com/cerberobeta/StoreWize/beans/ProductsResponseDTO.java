@@ -1,7 +1,6 @@
 package com.cerberobeta.StoreWize.beans;
 
 import com.cerberobeta.StoreWize.entities.products.ProductEntity;
-import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 

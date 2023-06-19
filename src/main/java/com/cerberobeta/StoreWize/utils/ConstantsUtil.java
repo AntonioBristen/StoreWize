@@ -27,11 +27,16 @@ public final class ConstantsUtil {
     public int timeOut;
 
     public static final String TRACEID = "traceId";
-
     public static final String SPANID = "spanId";
     public static final String HEADER_IUS = "x-ius";
 
-    public static final int COD_EXCEPCION = 1404;
+    public static final String USER = "wizeantonio";
+
+    public static final String PASS = "{noop}nolapodranvulnerar";
+
+    public static final String ROL_ACCES = "ADMIN";
+
+    public static final String PATH_ACCES = "/acces";
 
     public ConstantsUtil() {
     }

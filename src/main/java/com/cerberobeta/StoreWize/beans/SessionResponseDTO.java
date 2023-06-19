@@ -1,10 +1,6 @@
 package com.cerberobeta.StoreWize.beans;
 
-import com.cerberobeta.StoreWize.entities.products.ProductEntity;
 import com.cerberobeta.StoreWize.entities.session.RequestSessionEntity;
-import com.cerberobeta.StoreWize.entities.session.SessionEntity;
-
-import java.util.List;
 
 public class SessionResponseDTO {
 

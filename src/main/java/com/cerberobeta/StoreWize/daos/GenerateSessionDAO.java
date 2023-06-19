@@ -2,16 +2,12 @@ package com.cerberobeta.StoreWize.daos;
 
 import com.cerberobeta.StoreWize.entities.session.SessionEntity;
 import com.cerberobeta.StoreWize.utils.ConstantsUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 @Component
 public class GenerateSessionDAO {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(GenerateSessionDAO.class);
     RestTemplate restTemplate = new RestTemplate();
 
     @Autowired

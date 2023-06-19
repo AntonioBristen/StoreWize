@@ -5,7 +5,7 @@ public class AddressEntity{
 	private int number;
 	private String city;
 	private String street;
-	private Geolocation geolocation;
+	private GeolocationEntity geolocation;
 
 	public void setZipcode(String zipcode){
 		this.zipcode = zipcode;
@@ -39,11 +39,11 @@ public class AddressEntity{
 		return street;
 	}
 
-	public void setGeolocation(Geolocation geolocation){
+	public void setGeolocation(GeolocationEntity geolocation){
 		this.geolocation = geolocation;
 	}
 
-	public Geolocation getGeolocation(){
+	public GeolocationEntity getGeolocation(){
 		return geolocation;
 	}
 

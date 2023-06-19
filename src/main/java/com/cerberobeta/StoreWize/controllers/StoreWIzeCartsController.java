@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/v1/read/")
+@RequestMapping("/v1/edition/")
 public class StoreWIzeCartsController {
 
     @Autowired
@@ -31,6 +32,18 @@ public class StoreWIzeCartsController {
     public ResponseEntity<GeneralResponseDTO> putCarts(@Valid @RequestBody final CartsEntity carts)
     {
         return cartsService.updateCarts(carts);
+    }
+
+    @PostMapping(value = "/reactiv/carts-mono")
+    public ResponseEntity<GeneralResponseDTO> postCartsReactivMono(@Valid @RequestBody CartsEntity carts)
+    {
+        return cartsService.postCartsReactivMono(carts);
+    }
+
+    @PostMapping(value = "/reactiv/carts-flux")
+    public ResponseEntity<GeneralResponseDTO> postCartsReactivFlux(@Valid @RequestBody List<CartsEntity> carts)
+    {
+        return cartsService.postCartsReactivFlux(carts);
     }
 
 }
