@@ -24,6 +24,8 @@ public final class ConstantsUtil {
     public static final String SPANID = "spanId";
     public static final String HEADER_IUS = "x-ius";
 
+    public static final String HEADER_METHOD = "x-met";
+
     public static final String USER = "wizeantonio";
 
     public static final String PASS = "{noop}nolapodranvulnerar";

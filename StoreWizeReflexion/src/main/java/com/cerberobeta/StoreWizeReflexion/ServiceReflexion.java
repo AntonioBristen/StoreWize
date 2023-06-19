@@ -8,7 +8,7 @@ import java.lang.reflect.Modifier;
 public class ServiceReflexion {
 
 
-    public ResultReflexionEntity processReflexion(ReadCategoriesService cla, String me)
+    public ResultReflexionEntity processReflexion(ReadCategoriesService cla, final String me)
     {
         ResultReflexionEntity resultRelexionEntity = new ResultReflexionEntity();
         try
@@ -18,8 +18,8 @@ public class ServiceReflexion {
 
             resultRelexionEntity.setMethod(met.getName());
             resultRelexionEntity.setParams(met.getParameterCount());
-            resultRelexionEntity.setPrivado(Modifier.isPublic(met.getModifiers()));
-            resultRelexionEntity.setPrivado(Modifier.isPrivate(met.getModifiers()));
+            resultRelexionEntity.setPub(Modifier.isPublic(met.getModifiers()));
+            resultRelexionEntity.setPriv(Modifier.isPrivate(met.getModifiers()));
             resultRelexionEntity.setTypeReturn(met.getGenericReturnType().getTypeName());
             Object obj = met.invoke(cla);
 
@@ -27,6 +27,7 @@ public class ServiceReflexion {
             {
                 if(obj instanceof CategoryEntity) {
                     resultRelexionEntity.setCategories((CategoryEntity) obj);
+                    resultRelexionEntity.setCategory("Undefined");
                 }
             }else
             {

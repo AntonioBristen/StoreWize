@@ -1,38 +1,33 @@
 package com.cerberobeta.StoreWizeReflexion;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@Service
 public class ReadCategoriesService {
 
-    @Autowired
-    ReadCategoriesDAO readCategoriesDAO;
 
-    public CategoryEntity getCategories(int val)
+    public CategoryEntity getCategories()
     {
 
         CategoryEntity categoryEntity = new CategoryEntity();
 
-        categoryEntity.setCategorys(readCategoriesDAO.getCategories());
+        List<String> lista = new ArrayList<String>();
+        lista.add("home");
+        lista.add("jarden");
+        lista.add("toys");
+
+        String[] categories = new String[lista.size()];
+        categories = lista.toArray(categories);
+
+        categoryEntity.setCategorys(categories);
 
         return categoryEntity;
     }
 
-    public String getCategorie(String val)
+    public String getCategorie()
     {
 
-        CategoryEntity categoryEntity = new CategoryEntity();
-
-        categoryEntity.setCategorys(readCategoriesDAO.getCategories());
-
-        String catClean = "undefined";
-
-        catClean = categoryEntity.getCategorys()[0];
+        String catClean = "jarden";
 
         return catClean;
     }

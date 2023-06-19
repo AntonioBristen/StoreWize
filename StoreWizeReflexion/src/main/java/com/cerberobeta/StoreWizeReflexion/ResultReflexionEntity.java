@@ -1,20 +1,13 @@
 package com.cerberobeta.StoreWizeReflexion;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResultReflexionEntity {
-
     public String method;
 
     public int params;
 
-    @JsonProperty("public")
-    public boolean publico;
+    public boolean pub;
 
-    @JsonProperty("private")
-    public boolean privado;
+    public boolean priv;
 
     public String typeReturn;
 
@@ -54,20 +47,20 @@ public class ResultReflexionEntity {
         this.category = category;
     }
 
-    public boolean isPublico() {
-        return publico;
+    public boolean isPub() {
+        return pub;
     }
 
-    public void setPublico(boolean publico) {
-        this.publico = publico;
+    public void setPub(boolean pub) {
+        this.pub = pub;
     }
 
-    public boolean isPrivado() {
-        return privado;
+    public boolean isPriv() {
+        return priv;
     }
 
-    public void setPrivado(boolean privado) {
-        this.privado = privado;
+    public void setPriv(boolean priv) {
+        this.priv = priv;
     }
 
     public String getTypeReturn() {
